@@ -11,6 +11,7 @@ from keras.models import load_model
 #from PIL import Image
 
 model_s = load_model("app/static/model/mnist_Adam2_20210516.h5")
+#model_s = load_model("app/static/model/mnist_Vishv3_20230217.h5") 
 path = ""; secure_files = []
 
 def allowed_file(filename):
@@ -18,7 +19,7 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 def evaluate_img(path):
-    img = load_img.load_img(path, color_mode='grayscale', target_size=(28, 28))
+    img = load_img(path, color_mode='grayscale', target_size=(28, 28))
     # if white_bg:
     #     img = Image.fromarray(np.invert(img))
     x = img_to_array(img)

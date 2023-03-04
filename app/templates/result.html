@@ -15,11 +15,11 @@
                 <div class="form-group">                   
 					<img src="{{path}}" width="56" height="56"> 
 				</div>
-				<div class="result">
-                    Prediction: {{ pred }}<br>
+				<div class="result" style="font-size: 30px">
+                    Prediction: {{ pred }}<br><hr>
                 </div>
 				<div class="possibility">
-					Probability of the character being each digit (0 to 9):<br>
+					Probability of the character above being each digit (0 to 9):<br>
 					{% for row in result %} 
 						{{loop.index - 1}} : {{(row * 100)|round(2, 'common')}} % <br>
 					{% endfor %}
@@ -27,6 +27,10 @@
         </fieldset>
 		{{ form.submit(class="btn btn-outline-info") }}
     </form>
+<!-- 
+    <form>
+        {{ form.submit(class="btn btn-outline-info") }}
+    </form> -->
 </div>
 
 {% endblock %}
